@@ -18,9 +18,7 @@
 
 ## 需要使用的测试工具
 
-- [Mocha](http://visionmedia.github.io/mocha/)
-- [Chai](http://chaijs.com)
-- [Sinon.JS](http://sinonjs.org)
+- [Jasmine](http://jasmine.github.io/)
 
 ## 内容
 
@@ -59,4 +57,5 @@
 1. 是否符合测试驱动开发的要求
 2. 是否符合面向对象编程的要求
 3. 是否理解并合理使用Node.js
-4. 是否使用了 [Lo-Dash](https://lodash.com) 改进编程
+4. 是否使用了 ECMAScript 5 标准改进编程
+5. 是否在上一条基础上使用了 [Lo-Dash](https://lodash.com) 改进编程
