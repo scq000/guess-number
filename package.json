@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js --use_strict",
-    "test": "jshint ./app.js ./src/* && mocha ./src/test/*"
+    "test": "jasmine"
   },
   "dependencies": {
     "lodash": "^3.10.0"
