@@ -7,20 +7,13 @@ CompareNumber.prototype.compare =function (answer, input){
   var countA = 0;
   var countB = 0;
 
-  for(var i = 0; i < answer.length; i++){
-    for(var k = 0; k < input.length; k ++){
-      if(answer[i] === input[k]){
-        if(i === k){
-          countA += 1;
-        }else{
-          countB += 1;
-        }
-      }
-    }
-  }
+  answer.split('').forEach(function(num,index) {
+    var findIndex = input.indexOf(num);
+    countA += (findIndex === index)? 1: 0;
+    countB += (findIndex !== -1 && findIndex !== index)? 1:0;
+  });
 
   return  countA +'A' + countB + 'B';
-
 };
 
 module.exports = CompareNumber;
