@@ -8,9 +8,16 @@ describe('AnswerGenerator', function() {
 
     var answerGenerator;
     var randomString;
+    var _ = require('lodash');
 
     beforeEach(function() {
-      answerGenerator = new AnswerGenerator();
+      var callCount = 0;
+      spyOn(_, 'random').and.callFake(function() {
+        var randomNumbers = [1, 1, 2, 3, 4];
+        return randomNumbers[callCount++];
+      });
+
+      answerGenerator = new AnswerGenerator(_.random);
       randomString = answerGenerator.generate();
     });
 
@@ -33,14 +40,9 @@ describe('AnswerGenerator', function() {
       expect(hasRepeated(randomString)).toBe(true);
     });
 
-    it('should return a string whose elements are number', function() {
-      expect(parseInt(+randomString) === +randomString).toBe(true);
-    });
-
     it('should return random result', function() {
-      expect(randomString !== answerGenerator.generate()).toBe(true);
+      expect(randomString).toBe('1234');
     });
 
   });
-
 });
