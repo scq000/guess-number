@@ -10,11 +10,9 @@ AnswerGenerator.prototype.generate = function() {
 
   while(randomString.length !== 4){
     var randomNum = this.random(0, 9);
-    console.log(randomNum);
     if (_.includes(randomString, randomNum)) {
       continue;
     }
-
     randomString += randomNum;
   }
 
